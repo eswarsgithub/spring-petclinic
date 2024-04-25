@@ -4,6 +4,7 @@ node('springpetclinic') {
     }
     stage('build') {
         sh '''sudo sh -c \'echo 1 >  /proc/sys/vm/drop_caches\'
+	hostname
         sleep 10
         mvn clean package -DskipTests
         sleep 10
